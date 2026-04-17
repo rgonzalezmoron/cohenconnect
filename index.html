@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cohen Connect — Cómo registrarte por primera vez</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bordeaux: #ba2e5f;
+      --bordeaux-dark: #8a1f44;
+      --bordeaux-light: #f5e8ed;
+      --grey: #636569;
+      --grey-light: #888B8D;
+      --beige: #c1c0b8;
+      --beige-light: #f4f3f0;
+      --white: #ffffff;
+      --black: #1a1a1a;
+      --font-display: 'EB Garamond', Georgia, serif;
+      --font-body: 'Montserrat', sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--grey);
+      background: var(--white);
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── NAVBAR ─────────────────────────────────────────────── */
+    .navbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--beige);
+      padding: 0 24px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .navbar-logo img {
+      height: 28px;
+      display: block;
+    }
+
+    .navbar-cta {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      text-decoration: none;
+      border: 1.5px solid var(--bordeaux);
+      padding: 8px 18px;
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .navbar-cta:hover {
+      background: var(--bordeaux);
+      color: var(--white);
+    }
+
+    /* ─── HERO ────────────────────────────────────────────────── */
+    .hero {
+      background: #2e2e2e;
+      position: relative;
+      overflow: hidden;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, rgba(46,46,46,0.97) 38%, rgba(186,46,95,0.18) 100%);
+    }
+
+    .hero-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 24px;
+      height: 2px;
+      background: var(--bordeaux);
+      flex-shrink: 0;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero-title em {
+      color: var(--bordeaux);
+      font-style: italic;
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.8;
+      max-width: 420px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--white);
+      background: var(--bordeaux);
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 2px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+      text-align: center;
+    }
+
+    .btn-primary:hover {
+      background: var(--bordeaux-dark);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      background: transparent;
+      text-decoration: none;
+      padding: 13px 32px;
+      border-radius: 2px;
+      border: 1.5px solid rgba(255,255,255,0.25);
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s;
+      text-align: center;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--bordeaux);
+      color: var(--white);
+    }
+
+    .hero-right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-top: 3px solid var(--bordeaux);
+      padding: 32px;
+      border-radius: 2px;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .hero-card-title {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .hero-card-sub {
+      font-size: 11px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 24px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .hero-feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.5;
+    }
+
+    .hero-feature-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--bordeaux);
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+
+    /* ─── PASOS RÁPIDOS ────────────────────────────────────────── */
+    .steps-bar {
+      background: var(--bordeaux);
+      padding: 0 24px;
+    }
+
+    .steps-bar-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .steps-bar-inner::-webkit-scrollbar { display: none; }
+
+    .step-pill {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 20px;
+      white-space: nowrap;
+      border-right: 1px solid rgba(255,255,255,0.15);
+      text-decoration: none;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+
+    .step-pill:last-child { border-right: none; }
+
+    .step-pill:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    .step-pill-num {
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1;
+    }
+
+    .step-pill-label {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* ─── SECCIÓN GENÉRICA ─────────────────────────────────────── */
+    .section {
+      padding: 80px 24px;
+    }
+
+    .section-inner {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .section-alt {
+      background: var(--beige-light);
+    }
+
+    .section-dark {
+      background: var(--black);
+    }
+
+    /* ─── SECTION HEADER ───────────────────────────────────────── */
+    .section-header {
+      margin-bottom: 48px;
+    }
+
+    .eyebrow {
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--bordeaux);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 40px);
+      color: var(--black);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+
+    .section-title-light {
+      color: var(--white);
+    }
+
+    .section-desc {
+      font-size: 14px;
+      color: var(--grey-light);
+      margin-top: 10px;
+      max-width: 560px;
+      line-height: 1.8;
+    }
+
+    .section-desc-light {
+      color: rgba(255,255,255,0.55);
+    }
+
+    /* ─── PASO A PASO (TIMELINE) ───────────────────────────────── */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 0 32px;
+      position: relative;
+    }
+
+    .timeline-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .timeline-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--bordeaux-light);
+      border: 2px solid var(--bordeaux);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 22px;
+      color: var(--bordeaux);
+      font-weight: 600;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .timeline-line {
+      width: 2px;
+      flex: 1;
+      background: var(--beige);
+      margin: 8px 0;
+    }
+
+    .timeline-item:last-child .timeline-line {
+      display: none;
+    }
+
+    .timeline-body {
+      padding-bottom: 48px;
+    }
+
+    .timeline-item:last-child .timeline-body {
+      padding-bottom: 0;
+    }
+
+    .timeline-step-label {
+      font-family: var(--font-body);
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey-light);
+      margin-bottom: 4px;
+      margin-top: 12px;
+    }
+
+    .timeline-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: var(--black);
+      font-weight: 500;
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .timeline-text {
+      font-size: 14px;
+      color: var(--grey);
+      line-height: 1.85;
+      margin-bottom: 16px;
+    }
+
+    /* ─── MOCK SCREEN ──────────────────────────────────────────── */
+    .mock-screen {
+      background: var(--beige-light);
+      border: 1px solid var(--beige);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 20px;
+      max-width: 480px;
+    }
+
+    .mock-bar {
+      background: #e8e7e3;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 1px solid var(--beige);
+    }
+
+    .mock-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--beige);
+    }
+
+    .mock-url {
+      font-size: 10px;
+      color: var(--grey-light);
+      font-family: var(--font-body);
+      margin-left: 8px;
+      letter-spacing: 0.3px;
+    }
+
+    .mock-content {
+      padding: 24px;
+    }
+
+    /* ─── ALERTA / NOTA ────────────────────────────────────────── */
+    .alert-box {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--bordeaux-light);
+      border-left: 3px solid var(--bordeaux);
+      padding: 16px 20px;
+      border-radius: 0 2px 2px 0;
+      margin-top: 16px;
+    }
+
+    .alert-icon {
+      font-size: 18px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .alert-text {
+      font-size: 13px;
+      color: var(--bordeaux-dark);
+      line-height: 1.75;
+    }
+
+    .alert-text strong {
+      font-weight: 700;
+    }
+
+    .info-box {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: var(--beige-light);
+      border-left: 3px solid var(--beige);
+      padding: 16px 20px;
+      border-radius: 0 2px 2px 0;
+      margin-top: 16px;
+    }
+
+    .info-text {
+      font-size: 13px;
+      color: var(--grey);
+      line-height: 1.75;
+    }
+
+    .info-text strong {
+      color: var(--black);
+      font-weight: 700;
+    }
+
+    /* ─── FORMULARIO ILUSTRADO ─────────────────────────────────── */
+    .form-illustration {
+      background: var(--white);
+      border: 1px solid var(--beige);
+      border-top: 3px solid var(--bordeaux);
+      border-radius: 2px;
+      padding: 28px;
+      max-width: 360px;
+      margin-top: 20px;
+    }
+
+    .form-illus-title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      color: var(--black);
+      margin-bottom: 20px;
+    }
+
+    .form-field {
+      margin-bottom: 14px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--grey-light);
+      margin-bottom: 5px;
+    }
+
+    .form-input-mock {
+      width: 100%;
+      height: 36px;
+      background: var(--beige-light);
+      border: 1.5px solid var(--beige);
+      border-radius: 2px;
+    }
+
+    .form-input-mock.active {
+      border-color: var(--bordeaux);
+    }
+
+    .form-select-mock {
+      width: 100%;
+      height: 36px;
+      background: var(--beige-light);
+      border: 1.5px solid var(--beige);
+      border-radius: 2px;
+      position: relative;
+    }
+
+    .form-captcha {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px;
+      border: 1.5px solid var(--beige);
+      border-radius: 2px;
+      background: var(--white);
+      margin: 16px 0;
+    }
+
+    .captcha-check {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--beige);
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+
+    .captcha-text {
+      font-size: 12px;
+      color: var(--grey);
+    }
+
+    .captcha-logo {
+      margin-left: auto;
+      font-size: 10px;
+      color: var(--grey-light);
+      font-weight: 700;
+    }
+
+    .form-btn-mock {
+      width: 100%;
+      padding: 12px;
+      background: var(--bordeaux);
+      color: var(--white);
+      border: none;
+      border-radius: 2px;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      margin-bottom: 8px;
+    }
+
+    .form-btn-mock.secondary {
+      background: transparent;
+      color: var(--grey);
+      border: 1.5px solid var(--beige);
+    }
+
+    /* ─── EMAIL MOCK ───────────────────────────────────────────── */
+    .email-mock {
+      background: var(--white);
+      border: 1px solid var(--beige);
+      border-radius: 4px;
+      overflow: hidden;
+      max-width: 460px;
+      margin-top: 20px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.06);
+    }
+
+    .email-mock-header {
+      background: var(--beige-light);
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--beige);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .email-mock-from {
+      font-size: 11px;
+      color: var(--grey-light);
+    }
+
+    .email-mock-from strong {
+      color: var(--black);
+    }
+
+    .email-mock-time {
+      font-size: 10px;
+      color: var(--grey-light);
+    }
+
+    .email-mock-subject {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--black);
+      padding: 10px 20px;
+      border-bottom: 1px solid var(--beige);
+    }
+
+    .email-mock-body {
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .email-code {
+      font-family: var(--font-display);
+      font-size: 40px;
+      font-weight: 600;
+      color: var(--bordeaux);
+      background: var(--bordeaux-light);
+      padding: 16px 32px;
+      border-radius: 2px;
+      letter-spacing: 8px;
+      display: inline-block;
+      margin: 12px 0;
+    }
+
+    .email-instruction {
+      font-size: 12px;
+      color: var(--grey-light);
+      margin-top: 8px;
+    }
+
+    /* ─── QR SECTION ───────────────────────────────────────────── */
+    .qr-card {
+      background: var(--white);
+      border: 1px solid var(--beige);
+      border-top: 3px solid var(--bordeaux);
+      border-radius: 2px;
+      padding: 28px;
+      max-width: 360px;
+      margin-top: 20px;
+    }
+
+    /* ─── AUTHENTICATOR MOCK ──────────────────────────────────── */
+    .auth-mock {
+      background: var(--white);
+      border-radius: 16px;
+      overflow: hidden;
+      max-width: 260px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      margin-top: 20px;
+    }
+
+    .auth-statusbar {
+      background: #f5f5f5;
+      padding: 10px 16px 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--black);
+    }
+
+    .auth-header {
+      padding: 12px 16px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .auth-header-title {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--black);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .google-g {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #4285f4 25%, #ea4335 25% 50%, #fbbc05 50% 75%, #34a853 75%);
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    .auth-search {
+      background: #f5f5f5;
+      border-radius: 6px;
+      padding: 6px 10px;
+      margin: 8px 12px;
+      font-size: 11px;
+      color: var(--grey-light);
+    }
+
+    .auth-code-item {
+      padding: 10px 16px;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .auth-code-name {
+      font-size: 10px;
+      color: var(--grey-light);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .auth-code-num {
+      font-family: var(--font-display);
+      font-size: 26px;
+      color: #1a73e8;
+      letter-spacing: 2px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .auth-code-num .timer-icon {
+      width: 14px;
+      height: 14px;
+      border: 2px solid #1a73e8;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .auth-plus-btn {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #fbbc05;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 16px auto;
+      font-size: 22px;
+      color: var(--white);
+      font-weight: 700;
+    }
+
+    .auth-menu {
+      background: var(--white);
+      border-radius: 8px;
+      padding: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      margin: 0 16px 16px;
+    }
+
+    .auth-menu-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 8px;
+      font-size: 11px;
+      color: var(--black);
+      border-radius: 4px;
+    }
+
+    .auth-menu-icon {
+      width: 20px;
+      height: 20px;
+      background: var(--beige-light);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    /* ─── SOPORTE ──────────────────────────────────────────────── */
+    .soporte-bar {
+      background: var(--bordeaux-light);
+      border-top: 1px solid rgba(186,46,95,0.15);
+      padding: 40px 24px;
+    }
+
+    .soporte-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .soporte-title {
+      font-family: var(--font-display);
+      font-size: 24px;
+      color: var(--bordeaux-dark);
+      margin-bottom: 4px;
+    }
+
+    .soporte-sub {
+      font-size: 13px;
+      color: var(--bordeaux);
+    }
+
+    .soporte-email {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--bordeaux);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    .soporte-email:hover {
+      color: var(--bordeaux-dark);
+    }
+
+    /* ─── FOOTER ───────────────────────────────────────────────── */
+    footer {
+      background: var(--black);
+      padding: 32px 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-logo img {
+      height: 22px;
+      opacity: 0.7;
+      display: block;
+    }
+
+    .footer-text {
+      font-size: 11px;
+      color: rgba(255,255,255,0.3);
+      line-height: 1.6;
+    }
+
+    .footer-link {
+      font-size: 11px;
+      color: rgba(255,255,255,0.4);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover {
+      color: var(--bordeaux);
+    }
+
+    /* ─── DIVIDER ──────────────────────────────────────────────── */
+    .divider {
+      height: 1px;
+      background: var(--beige);
+      margin: 0;
+    }
+
+    /* ─── RESPONSIVE ───────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px 24px;
+      }
+
+      .hero-right {
+        justify-content: flex-start;
+      }
+
+      .hero-card {
+        max-width: 100%;
+      }
+
+      .soporte-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .timeline-item {
+        grid-template-columns: 56px 1fr;
+        gap: 0 20px;
+      }
+
+      .paso2-layout {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .section {
+        padding: 56px 20px;
+      }
+
+      .steps-bar-inner {
+        padding: 0;
+      }
+
+      .step-pill {
+        padding: 14px 16px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+
+      .paso4-grid {
+        grid-template-columns: 1fr !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="navbar-inner">
+      <a href="https://cohen.com.ar" class="navbar-logo">
+        <img src="/assets/Logo_Cohen_horizontal_transparente.png" alt="Cohen">
+      </a>
+      <a href="https://connect.cohen.com.ar/login" class="navbar-cta" target="_blank" rel="noopener">Ir a Cohen Connect</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Cohen Connect</p>
+        <h1 class="hero-title">
+          Registrate por<br>
+          <em>primera vez</em><br>
+          en minutos.
+        </h1>
+        <p class="hero-subtitle">
+          Accedé a tu portafolio, transferí fondos, suscribí y rescatá instrumentos desde cualquier dispositivo. Seguí este instructivo paso a paso.
+        </p>
+      </div>
+      <div class="hero-right">
+        <div class="hero-card">
+          <h3 class="hero-card-title">Cohen Connect</h3>
+          <p class="hero-card-sub">Plataforma de inversiones</p>
+          <ul class="hero-feature-list">
+            <li>Consultá tu cartera y cuenta corriente en tiempo real</li>
+            <li>Agregá y gestioná cuentas bancarias</li>
+            <li>Cargá y ejecutá transferencias</li>
+            <li>Suscribí y rescatá fondos de inversión</li>
+            <li>Acceso seguro con doble autenticación (2FA)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BARRA DE PASOS -->
+  <div class="steps-bar">
+    <div class="steps-bar-inner">
+      <a href="#paso-1" class="step-pill">
+        <span class="step-pill-num">01</span>
+        <span class="step-pill-label">Crear usuario</span>
+      </a>
+      <a href="#paso-2" class="step-pill">
+        <span class="step-pill-num">02</span>
+        <span class="step-pill-label">Completar formulario</span>
+      </a>
+      <a href="#paso-3" class="step-pill">
+        <span class="step-pill-num">03</span>
+        <span class="step-pill-label">Validar email</span>
+      </a>
+      <a href="#paso-4" class="step-pill">
+        <span class="step-pill-num">04</span>
+        <span class="step-pill-label">Google Authenticator</span>
+      </a>
+      <a href="#paso-5" class="step-pill">
+        <span class="step-pill-num">05</span>
+        <span class="step-pill-label">Ingresar</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- PASO A PASO PRINCIPAL -->
+  <section class="section" id="instructivo">
+    <div class="section-inner">
+      <div class="section-header">
+        <p class="eyebrow">Instructivo</p>
+        <h2 class="section-title">Proceso de registro,<br>paso a paso.</h2>
+        <p class="section-desc">Antes de comenzar, asegurate de haber recibido el email de bienvenida de Cohen con tu número de comitente.</p>
+      </div>
+
+      <div class="timeline">
+
+        <!-- PASO 1 -->
+        <div class="timeline-item" id="paso-1">
+          <div class="timeline-left">
+            <div class="timeline-num">1</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-body">
+            <p class="timeline-step-label">Paso 01 de 05</p>
+            <h3 class="timeline-title">Accedé y hacé click en "Registrarse"</h3>
+            <p class="timeline-text">
+              Ingresá a <a href="https://connect.cohen.com.ar/login" style="color: var(--bordeaux); font-weight: 600;">connect.cohen.com.ar</a>&nbsp;desde tu computadora. En la pantalla de inicio, hacé click en el botón <strong>REGISTRARSE</strong>.
+            </p>
+
+            <div class="mock-screen">
+              <div class="mock-bar">
+                <div class="mock-dot"></div>
+                <div class="mock-dot"></div>
+                <div class="mock-dot"></div>
+                <span class="mock-url">connect.cohen.com.ar/login</span>
+              </div>
+              <div class="mock-content">
+                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+                  <img src="/assets/Logo_Cohen_horizontal_transparente.png" alt="Cohen" style="height: 22px; filter: brightness(0);">
+                </div>
+                <p style="font-family: var(--font-display); font-size: 22px; color: var(--black); margin-bottom: 20px;">Hola</p>
+                <div class="form-field">
+                  <div class="form-label">Usuario</div>
+                  <div class="form-input-mock"></div>
+                </div>
+                <div class="form-field">
+                  <div class="form-label">Contraseña</div>
+                  <div class="form-input-mock"></div>
+                </div>
+                <button class="form-btn-mock" style="margin-top: 4px;">Ingresar</button>
+                <button class="form-btn-mock" style="background: var(--bordeaux-dark); margin-top: 4px;">Registrarse</button>
+                <p style="font-size: 10px; color: var(--grey-light); text-align: center; margin-top: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Recuperación de contraseña</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASO 2 -->
+        <div class="timeline-item" id="paso-2">
+          <div class="timeline-left">
+            <div class="timeline-num">2</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-body">
+            <p class="timeline-step-label">Paso 02 de 05</p>
+            <h3 class="timeline-title">Completá el formulario de registro</h3>
+            <p class="timeline-text">
+              Completá todos los campos con los mismos datos que informaste al abrir tu cuenta en Cohen. El email debe coincidir exactamente con el registrado al crear la cuenta.
+            </p>
+
+            <div style="display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: start;" class="paso2-layout">
+              <div class="form-illustration" style="margin-top: 0;">
+                <h4 class="form-illus-title">Crear cuenta</h4>
+                <div class="form-field">
+                  <div class="form-label">Identificador impositivo</div>
+                  <div class="form-select-mock" style="display: flex; align-items: center; padding: 0 12px; font-size: 12px; color: var(--grey-light);">Seleccionar CUIT / CUIL…</div>
+                </div>
+                <div class="form-field">
+                  <div class="form-label">Número de identificador</div>
+                  <div class="form-input-mock"></div>
+                </div>
+                <div class="form-field">
+                  <div class="form-label">Nombre de usuario</div>
+                  <div class="form-input-mock active"></div>
+                </div>
+                <div class="form-field">
+                  <div class="form-label">Email</div>
+                  <div class="form-input-mock"></div>
+                </div>
+                <div class="form-field">
+                  <div class="form-label">Contraseña (mín. 8 caracteres)</div>
+                  <div class="form-input-mock"></div>
+                </div>
+                <div class="form-field">
+                  <div class="form-label">Repetir contraseña</div>
+                  <div class="form-input-mock"></div>
+                </div>
+                <div class="form-captcha">
+                  <div class="captcha-check"></div>
+                  <span class="captcha-text">No soy un robot</span>
+                  <span class="captcha-logo">reCAPTCHA</span>
+                </div>
+                <button class="form-btn-mock">Registrarse</button>
+                <button class="form-btn-mock secondary">Cancelar</button>
+              </div>
+
+              <div style="display: flex; flex-direction: column; gap: 16px;">
+                <div class="alert-box" style="margin-top: 0;">
+                  <span class="alert-icon">⚠️</span>
+                  <p class="alert-text">
+                    <strong>Importante:</strong> el identificador impositivo y el email deben ser los mismos que registraste al crearte la cuenta.
+                  </p>
+                </div>
+
+                <div style="background: var(--beige-light); border: 1px solid var(--beige); border-radius: 2px; padding: 20px;">
+                  <p style="font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--grey-light); margin-bottom: 12px;">Referencia de campos</p>
+                  <div style="display: flex; flex-direction: column; gap: 10px;">
+                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                      <div style="width: 6px; height: 6px; background: var(--bordeaux); border-radius: 50%; flex-shrink: 0; margin-top: 5px;"></div>
+                      <p style="font-size: 12px; color: var(--grey); line-height: 1.5;"><strong style="color: var(--black);">Identificador impositivo:</strong> seleccioná CUIT o CUIL según corresponda.</p>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                      <div style="width: 6px; height: 6px; background: var(--bordeaux); border-radius: 50%; flex-shrink: 0; margin-top: 5px;"></div>
+                      <p style="font-size: 12px; color: var(--grey); line-height: 1.5;"><strong style="color: var(--black);">Nombre de usuario:</strong> elegí el nombre con el que querés acceder. Podés usar el mismo email u otro identificador.</p>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                      <div style="width: 6px; height: 6px; background: var(--bordeaux); border-radius: 50%; flex-shrink: 0; margin-top: 5px;"></div>
+                      <p style="font-size: 12px; color: var(--grey); line-height: 1.5;"><strong style="color: var(--black);">Email:</strong> debe ser exactamente el mismo que usaste al abrir tu cuenta.</p>
+                    </div>
+                    <div style="display: flex; gap: 10px; align-items: flex-start;">
+                      <div style="width: 6px; height: 6px; background: var(--bordeaux); border-radius: 50%; flex-shrink: 0; margin-top: 5px;"></div>
+                      <p style="font-size: 12px; color: var(--grey); line-height: 1.5;"><strong style="color: var(--black);">Contraseña:</strong> mínimo 8 caracteres. Te recomendamos incluir letras, números y símbolos.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASO 3 -->
+        <div class="timeline-item" id="paso-3">
+          <div class="timeline-left">
+            <div class="timeline-num">3</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-body">
+            <p class="timeline-step-label">Paso 03 de 05</p>
+            <h3 class="timeline-title">Verificá tu email</h3>
+            <p class="timeline-text">
+              Luego de completar el formulario, Cohen Connect enviará un código de validación a tu correo electrónico. Revisá tu casilla, copiá el código y pegalo en la pantalla que aparece en Connect. Luego hacé click en <strong>CONFIRMAR</strong>.
+            </p>
+
+            <div class="email-mock">
+              <div class="email-mock-header">
+                <div class="email-mock-from"><strong>noreply@cohen.com.ar</strong> · Para mí</div>
+                <div class="email-mock-time">Hace 2 minutos</div>
+              </div>
+              <div class="email-mock-subject">Código de validación · Cohen Connect</div>
+              <div class="email-mock-body">
+                <p class="email-instruction">Por favor, copiá y pegá el siguiente código:</p>
+                <div class="email-code">60458572</div>
+                <p class="email-instruction">Este código expira en 10 minutos.</p>
+              </div>
+            </div>
+
+            <div class="mock-screen" style="margin-top: 20px; max-width: 380px;">
+              <div class="mock-bar">
+                <div class="mock-dot"></div>
+                <div class="mock-dot"></div>
+                <div class="mock-dot"></div>
+                <span class="mock-url">connect.cohen.com.ar</span>
+              </div>
+              <div class="mock-content">
+                <p style="font-family: var(--font-display); font-size: 20px; color: var(--black); margin-bottom: 8px;">Hola</p>
+                <p style="font-size: 12px; color: var(--grey); margin-bottom: 16px; line-height: 1.6;">Se ha enviado un mail a tu casilla con un código. Por favor ingresalo para continuar.</p>
+                <div class="form-field">
+                  <div class="form-label">Código</div>
+                  <div class="form-input-mock active"></div>
+                </div>
+                <button class="form-btn-mock" style="margin-top: 8px;">Confirmar</button>
+              </div>
+            </div>
+
+            <div class="info-box">
+              <span style="font-size: 16px; flex-shrink: 0; margin-top: 1px;">💡</span>
+              <p class="info-text">
+                <strong>Tip:</strong> si no recibís el email, revisá la carpeta de spam. Los correos de Hotmail o Yahoo pueden tener demoras. Te recomendamos usar una cuenta Gmail para evitar inconvenientes.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASO 4 -->
+        <div class="timeline-item" id="paso-4">
+          <div class="timeline-left">
+            <div class="timeline-num">4</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-body">
+            <p class="timeline-step-label">Paso 04 de 05</p>
+            <h3 class="timeline-title">Configurá Google Authenticator</h3>
+            <p class="timeline-text">Una vez que ingreses el código que enviamos a tu email, te mostraremos un código QR que deberás escanear con Google Authenticator. Esto es un segundo factor de autenticación que proporciona mayor seguridad a tu cuenta. Si no tenés la app de&nbsp;<strong>Google Authenticator</strong> (versión <em>gratuita</em>) en tu celular, podés descargarla desde el App Store o Google Play.
+            </p>
+
+            <div class="alert-box">
+              <span class="alert-icon">🔒</span>
+              <p class="alert-text">
+                <strong>Atención:</strong> asegurate de descargar la versión <strong>gratuita</strong> de Google Authenticator. Ha habido casos de personas que descargaron aplicaciones similares pagas por error.
+              </p>
+            </div>
+
+            <div style="margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; max-width: 560px;" class="paso4-grid">
+              <div>
+                <p class="timeline-text" style="margin-bottom: 0; font-size: 13px;">
+                  Una vez instalada la app, tocá el botón <strong>+</strong> en la esquina inferior derecha y seleccioná <strong>"Escanear un código QR"</strong>. Apuntá la cámara al código QR que aparece en Cohen Connect.
+                </p>
+              </div>
+              <div>
+                <div class="auth-mock">
+                  <div class="auth-statusbar">
+                    <span>12:15</span>
+                    <span>▲ ▲ ▲</span>
+                  </div>
+                  <div class="auth-header">
+                    <div class="auth-header-title">
+                      <div class="google-g"></div>
+                      Google Authenticator
+                    </div>
+                  </div>
+                  <div class="auth-search">Buscar...</div>
+                  <div class="auth-code-item">
+                    <div class="auth-code-name">CohenConnect: usuario</div>
+                    <div class="auth-code-num">
+                      <span>209 832</span>
+                      <div class="timer-icon"></div>
+                    </div>
+                  </div>
+                  <div class="auth-code-item">
+                    <div class="auth-code-name">CohenBO: usuario</div>
+                    <div class="auth-code-num">
+                      <span>992 233</span>
+                      <div class="timer-icon"></div>
+                    </div>
+                  </div>
+                  <div style="display: flex; justify-content: flex-end; padding: 0 12px;">
+                    <div class="auth-plus-btn">+</div>
+                  </div>
+                  <div class="auth-menu">
+                    <div class="auth-menu-item">
+                      <div class="auth-menu-icon">⌨️</div>
+                      Introducir clave de configuración
+                    </div>
+                    <div class="auth-menu-item">
+                      <div class="auth-menu-icon">📷</div>
+                      Escanear un código QR
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 28px;">
+              <p style="font-size: 13px; color: var(--grey); margin-bottom: 12px;">Así verás el código QR en Cohen Connect. Escanealo con Google Authenticator:</p>
+              <div class="qr-card">
+                <p style="font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 4px;">Código Google Authenticator</p>
+                <p style="font-size: 13px; color: var(--grey); line-height: 1.7; margin-bottom: 12px;">Para continuar con la validación, descargá la app Google Authenticator en tu celular. Luego, usá la app para escanear el siguiente código QR.</p>
+                <div style="display: flex; justify-content: center; margin: 16px 0;">
+                  <div style="width: 110px; height: 110px; background: var(--beige-light); border: 1px solid var(--beige); display: grid; grid-template-columns: repeat(11, 1fr); grid-template-rows: repeat(11, 1fr); gap: 0; padding: 8px; border-radius: 2px;">
+                    <div style="grid-column: 1/4; grid-row: 1/4; background: var(--black); border-radius: 1px;"></div>
+                    <div style="grid-column: 2/3; grid-row: 2/3; background: var(--beige-light);"></div>
+                    <div style="grid-column: 5/7; grid-row: 5/7; background: var(--bordeaux); border-radius: 1px;"></div>
+                    <div style="grid-column: 5; grid-row: 3; background: var(--black);"></div>
+                    <div style="grid-column: 7; grid-row: 3; background: var(--black);"></div>
+                    <div style="grid-column: 3; grid-row: 5; background: var(--black);"></div>
+                    <div style="grid-column: 3; grid-row: 7; background: var(--black);"></div>
+                    <div style="grid-column: 9; grid-row: 5; background: var(--black);"></div>
+                    <div style="grid-column: 8; grid-row: 8; background: var(--black);"></div>
+                    <div style="grid-column: 10; grid-row: 9; background: var(--black);"></div>
+                    <div style="grid-column: 9/12; grid-row: 1/4; background: var(--black); border-radius: 1px;"></div>
+                    <div style="grid-column: 10/11; grid-row: 2/3; background: var(--beige-light);"></div>
+                    <div style="grid-column: 1/4; grid-row: 9/12; background: var(--black); border-radius: 1px;"></div>
+                    <div style="grid-column: 2/3; grid-row: 10/11; background: var(--beige-light);"></div>
+                  </div>
+                </div>
+                <p style="font-size: 11px; color: var(--grey-light); text-align: center;">Una vez escaneado, hacé click en <strong style="color: var(--black);">Confirmar</strong></p>
+                <button class="form-btn-mock" style="margin-top: 16px;">Confirmar</button>
+              </div>
+            </div>
+
+            <div class="info-box" style="margin-top: 20px;">
+              <span style="font-size: 16px; flex-shrink: 0; margin-top: 1px;">📌</span>
+              <p class="info-text">
+                <strong>Si no aparece el QR:</strong> solicitá el reinicio del código QR a tu asesor o escribí a <a href="mailto:soporte@cohen.com.ar" style="color: var(--bordeaux); font-weight: 600;">soporte@cohen.com.ar</a>. Te recomendamos realizar todo el proceso desde una computadora sin cerrar la ventana.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PASO 5 -->
+        <div class="timeline-item" id="paso-5">
+          <div class="timeline-left">
+            <div class="timeline-num">5</div>
+            <div class="timeline-line"></div>
+          </div>
+          <div class="timeline-body">
+            <p class="timeline-step-label">Paso 05 de 05</p>
+            <h3 class="timeline-title">¡Listo! Ya podés ingresar a Cohen Connect.</h3>
+            <p class="timeline-text">
+              A partir de ahora, cada vez que quieras ingresar a Cohen Connect necesitarás tu usuario, contraseña y el código de 6 dígitos que genera la app Google Authenticator. El código se renueva automáticamente cada 30 segundos.
+            </p>
+
+            <div style="background: var(--beige-light); border: 1px solid var(--beige); border-left: 3px solid var(--bordeaux); border-radius: 0 2px 2px 0; padding: 24px; max-width: 460px; margin-top: 16px;">
+              <p style="font-size: 9px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--bordeaux); margin-bottom: 12px;">Resumen del proceso de ingreso</p>
+              <div style="display: flex; flex-direction: column; gap: 12px;">
+                <div style="display: flex; align-items: center; gap: 14px;">
+                  <div style="width: 28px; height: 28px; background: var(--bordeaux); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--white); flex-shrink: 0;">1</div>
+                  <p style="font-size: 13px; color: var(--grey);">Ingresá tu <strong style="color: var(--black);">usuario y contraseña</strong></p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 14px;">
+                  <div style="width: 28px; height: 28px; background: var(--bordeaux); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--white); flex-shrink: 0;">2</div>
+                  <p style="font-size: 13px; color: var(--grey);">Abrí Google Authenticator y copiá el código de <strong style="color: var(--black);">6 dígitos</strong></p>
+                </div>
+                <div style="display: flex; align-items: center; gap: 14px;">
+                  <div style="width: 28px; height: 28px; background: var(--bordeaux); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: var(--white); flex-shrink: 0;">3</div>
+                  <p style="font-size: 13px; color: var(--grey);">Pegá el código en la pantalla de <strong style="color: var(--black);">autenticación</strong> de Cohen Connect</p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 28px; max-width: 460px;">
+              <a href="https://connect.cohen.com.ar/login" class="btn-primary" target="_blank" rel="noopener" style="display: inline-block;">Ingresar a Cohen Connect</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOPORTE -->
+  <div class="soporte-bar">
+    <div class="soporte-inner">
+      <div>
+        <h3 class="soporte-title">¿Necesitás ayuda?</h3>
+        <p class="soporte-sub">Nuestro equipo de soporte está disponible para asistirte.</p>
+      </div>
+      <a href="mailto:soporte@cohen.com.ar" class="soporte-email">soporte@cohen.com.ar</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <img src="/assets/Logo_Cohen_horizontal_transparente.png" alt="Cohen">
+      </div>
+      <p class="footer-text">© 2024 Cohen S.A. · ALyC y AN · Matrícula CNV N° 607</p>
+      <a href="https://cohen.com.ar" class="footer-link" target="_blank" rel="noopener">cohen.com.ar</a>
+    </div>
+  </footer>
+
+<script>
+  (function() {
+    function report() {
+      var h = Math.max(
+        document.body ? document.body.scrollHeight : 0,
+        document.documentElement ? document.documentElement.scrollHeight : 0,
+        600
+      );
+      window.parent.postMessage({ type: 'cohen-iframe-height', height: h }, '*');
+    }
+    window.addEventListener('load', report);
+    setTimeout(report, 500);
+  })();
+</script>
+</body></html>
